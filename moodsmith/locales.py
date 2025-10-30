@@ -1,4 +1,4 @@
-# holds messages templates
+'''holds messages templates'''
 
 # Message templates for the positive() function.
 POSITIVE_TEMPLATES = {
@@ -7,5 +7,5 @@ POSITIVE_TEMPLATES = {
         "Love the progress{punct} — keep going",
         "Tiny steps add up{punct} keep shipping",
     ],
-    # add more languages later, e.g. "es": [...], "fr": [...]
+    # Add more languages, e.g. "es": [...], "fr": [...]
 }

@@ -9,6 +9,7 @@ name = "pypi"
 pytest = "*"
 build = "*"
 twine = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.12"
