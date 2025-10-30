@@ -1,4 +1,4 @@
-[![Pylint](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/pylint.yml/badge.svg)](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/pylint.yml)
+[![Pylint](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/pylint.yml/badge.svg)](https://github.com/swe-students-fall2025/3-python-packagepackage-team_harbor/actions/workflows/pylint.yml)
 
 # Python Package Exercise
 
