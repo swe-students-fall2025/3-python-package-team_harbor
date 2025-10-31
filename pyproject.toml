@@ -8,6 +8,7 @@ description = "A package designed to motivate you while you work, directly in yo
 version = "0.0.1"
 authors = [
   { name="Samuel Yang", email="sy3638@nyu.edu" },
+  {name="Conor Tiernan", email="ct3551@nyu.edu},
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
