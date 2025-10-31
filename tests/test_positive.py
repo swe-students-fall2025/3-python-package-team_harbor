@@ -1,2 +1,1 @@
-##for tests for positive
-# run it from repo root
+'''for tests for positive messages, to be run from repo root'''
