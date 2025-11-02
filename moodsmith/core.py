@@ -1,9 +1,10 @@
 '''Core driver program of moodsmith'''
 
 import random
-from typing import Optional
+from typing import Optional, Literal
 
-from .locales import POSITIVE_TEMPLATES
+from .locales import POSITIVE_TEMPLATES, MOTIVATIONAL_TEMPLATES
+Intensity = Literal["soft", "medium", "hard"]
 
 
 def _bangs(intensity: int) -> str:
@@ -43,3 +44,25 @@ def positive(
     base = rnd.choice(templates).format(punct=punct)
     prefix = f"{name}, " if name else ""
     return prefix + base
+
+
+def motivational(
+    language: str = "en",
+    intensity: Intensity = "medium",
+    name: Optional[str] = None,
+    seed: Optional[int] = None,
+) -> str:
+    """
+    Return a short motivational sentence (pyjokes style: one line).
+    Args:
+        language: language key; falls back to 'en' if not found.
+        intensity: 'soft' | 'medium' | 'hard' (affects tone/力度).
+        name: Optional person to address (prefix).
+        seed: deterministic selection if provided.
+    """
+    rnd = random.Random(seed)
+    lang_table = MOTIVATIONAL_TEMPLATES.get(language) or MOTIVATIONAL_TEMPLATES["en"]
+    pool = lang_table.get(intensity) or lang_table["medium"]
+    msg = rnd.choice(pool)
+    prefix = f"{name}, " if name else ""
+    return prefix + msg
