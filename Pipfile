@@ -6,10 +6,10 @@ name = "pypi"
 [packages]
 
 [dev-packages]
-pytest = "*"
 build = "*"
 twine = "*"
 pylint = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.12"
