@@ -1,6 +1,6 @@
 '''Examples of how moodsmith is used'''
 
-from moodsmith import positive_quote
+#from moodsmith import positive_quote
 
 #print("-- Positive demo --")
 #print(positive_quote(language="en", name="bob", enthusiasm=3))
