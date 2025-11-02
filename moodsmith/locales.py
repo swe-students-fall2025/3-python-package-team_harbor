@@ -1,4 +1,4 @@
-"""Holds message templates for positive_quote()."""
+"""Holds message templates"""
 
 POSITIVE_TEMPLATES = {
     "es": [
@@ -25,7 +25,10 @@ POSITIVE_TEMPLATES = {
             "et vous êtes effectivement en train de penser{punct}"
         ),
         "Vous faites un excellent travail{punct}",
-        "Les petits pas s'accumulent, et vous y contribuez certainement{punct}",
+        (
+            "Les petits pas s'accumulent, "
+            "et vous y contribuez certainement{punct}"
+        ),
         "J'adore les progrès{punct} - continuer toujours",
     ],
 }
@@ -45,8 +48,14 @@ MOTIVATIONAL_TEMPLATES = {
             "If you can explain it, you can build it.",
             "Read the errors like clues, not verdicts.",
             "When in doubt, make it smaller and make it pass.",
-            "Experience is the name everyone gives to their mistakes. - Oscar Wilde",
-            "If, at first, you do not succeed, call it version 1.0. ― Khayri R.R. Woulfe",
+            (
+                "Experience is the name everyone gives to their mistakes."
+                " - Oscar Wilde"
+            ),
+            (
+                "If, at first, you do not succeed, "
+                "call it version 1.0. ― Khayri R.R. Woulfe"
+            ),
             "Confusion is part of programming. ― Felienne Hermans"
         ],
         "hard": [
@@ -58,5 +67,19 @@ MOTIVATIONAL_TEMPLATES = {
             "It's not a bug; it's an undocumented feature. - Grace Hopper",
             "Talk is cheap. Show me the code. ― Linus Torvalds"
         ],
+    }
+}
+
+NEGATIVE_MOTIVATIONAL = {
+    "en": {
+        "soft": [
+
+        ],
+        "medium": [
+
+        ],
+        "hard": [
+
+        ]
     }
 }
