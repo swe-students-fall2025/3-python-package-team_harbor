@@ -2,13 +2,14 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+
 [project]
 name = "moodsmith"
 description = "A package designed to motivate you while you work, directly in your terminal."
 version = "0.0.1"
 authors = [
   { name="Samuel Yang", email="sy3638@nyu.edu" },
-  {name="Conor Tiernan", email="ct3551@nyu.edu},
+  {name="Conor Tiernan", email="ct3551@nyu.edu"},
 ]
 license = { file = "LICENSE" }
 readme = "README.md"

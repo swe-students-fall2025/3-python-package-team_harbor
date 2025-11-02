@@ -18,7 +18,7 @@ def _bangs(intensity: int) -> str:
     return "!" * intensity if intensity else "."
 
 
-def positive(
+def positive_quote(
     language: str = "en",
     name: Optional[str] = None,
     enthusiasm: int = 2,
@@ -28,9 +28,9 @@ def positive(
     Return a short positive message.
 
     Args:
-        language: english, falls back to english if none other written
+        language: e.g en, es, fr : defaults to english if empty
         name: Optional person to address.
-        enthusiasm: 0-5 number of exclamation points (0 -> '.').
+        enthusiasm: 0-5, number of exclamation points (0 -> '.').
         seed: If provided, makes the random
             choice deterministic (useful for tests).
     '''
