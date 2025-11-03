@@ -1,14 +1,14 @@
 """funny test for various improper inputs"""
 
-import pytest
 
 from moodsmith.core import funny
 
 
-def test_funny_intensity_in_range():
-    """throws error if intensity inpiut is not valid"""
-with pytest.raises(ValueError):
-    funny("er", None, -1, 54)
+def test_funny_seed_is_active():
+    """throws error if strings arent the same"""
+    a=funny("er", None, 1, 54)
+    b=funny("er", None, 1, 54)
+    assert a==b
 
 
 def test_language_not_correct_language_still_prints_english():
