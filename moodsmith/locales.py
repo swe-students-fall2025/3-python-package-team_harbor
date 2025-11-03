@@ -73,13 +73,161 @@ MOTIVATIONAL_TEMPLATES = {
 NEGATIVE_MOTIVATIONAL = {
     "en": {
         "soft": [
-
+            (
+                "tiny steps are still steps. "
+                "standing still like you are isn't{punct}"
+            ),
+            "come on. A little effort won't kill you{punct}",
+            (
+                "thinking about it is cute, "
+                "but actually doing it would be impressive{punct}"
+            ),
+            "your comfort zone is cozy. so is mediocrity{punct}",
+            "you don't need more time. you need fewer excuses{punct}",
+            "you could have finished this by now. instead, here we are{punct}",
+            (
+                "maybe if you started, "
+                "you wouldn't still be thinking about starting{punct}"
+            )
         ],
         "medium": [
-
+            "look at you, doing nothing yet again. iconic{punct}",
+            "if you're tired of restarting, try not quitting for once{punct}",
+            (
+                "I'm sure thinking about getting "
+                "things done is going to help{punct}"
+            ),
+            "this isn't getting any easier while you wait{punct}",
+            "waiting for motivation is a hobby at this point{punct}",
+            "future you here. Please start now{punct}",
+            "you haven't failed yet. But you sure are getting close{punct}"
         ],
         "hard": [
-
+            "your comfort zone called. It says you've never left{punct}",
+            "your goals miss you. They haven't seen you in a while{punct}",
+            "with your work ethic, your potential is just a rumour{punct}",
+            "if you keep this up you'll prove your haters right{punct}",
+            (
+                "you don't need to rush. "
+                "It's not like your life is finite or anything{punct}"
+            ),
+            "if effort was money, you'd be broke{punct}",
+            "your future self is watching. They're disappointed{punct}"
+        ]
+    },
+    "fr": {
+        "soft": [
+            (
+                "même les petits pas restent des pas. "
+                "Rester immobile comme tu le fais n'en est pas{punct}"
+            ),
+            "allez. Un petit effort ne va pas te tuer{punct}",
+            (
+                "y penser c'est mignon, "
+                "mais le faire pour de vrai serait impressionnant{punct}"
+            ),
+            "ta zone de confort est agréable. La médiocrité aussi{punct}",
+            (
+                "tu n'as pas besoin de plus de temps. "
+                "Tu as besoin de moins d'excuses{punct}",
+            ),
+            (
+                "tu aurais pu finir ça depuis longtemps. "
+                "À la place, nous voilà{punct}",
+            )
+            (
+                "peut-être que si tu avais commencé, "
+                "tu ne serais pas encore en train d'y penser{punct}"
+            )
+        ],
+        "medium": [
+            "regarde-toi, à ne rien faire encore une fois. Iconique{punct}",
+            (
+                "si tu es fatigué de recommencer, "
+                "essaie de ne pas abandonner pour une fois{punct}"
+            ),
+            (
+                "je suis sûr que penser à "
+                "faire les choses va beaucoup aider{punct}"
+            ),
+            "ça ne devient pas plus facile en attendant{punct}",
+            "attendre la motivation est devenu un passe-temps{punct}",
+            "futur toi ici. S'il te plaît, commence maintenant{punct}",
+            (
+                "tu n'as pas encore échoué. "
+                "Mais tu t'en rapproches sérieusement{punct}"
+            )
+        ],
+        "hard": [
+            (
+                "ta zone de confort a appelé. "
+                "Elle dit que tu n'en es jamais sorti{punct}"
+            ),
+            (
+                "tes objectifs te manquent. "
+                "Ils ne t'ont pas vu depuis un moment{punct}"
+            ),
+            (
+                "avec ton éthique de travail, ton "
+                "potentiel n'est qu'une rumeur{punct}"
+            ),
+            (
+                "si tu continues comme ça, tu donneras "
+                "raison à tes détracteurs{punct}"
+            ),
+            (
+                "tu n'as pas besoin de te presser. C'est pas comme "
+                "si ta vie était finie ou quoi que ce soit{punct}"
+            ),
+            "si l'effort valait de l'argent, tu serais pauvre{punct}",
+            "ton futur toi te regarde. Il est déçu{punct}"
+        ]
+    },
+    "es": {
+        "soft": [
+            (
+                "los pasos pequeños siguen siendo pasos. "
+                "quedarse quieto como lo haces no lo es{punct}"
+            ),
+            "vamos. Un poco de esfuerzo no te va a matar{punct}",
+            (
+                "pensarlo es lindo, "
+                "pero hacerlo de verdad sería impresionante{punct}"
+            ),
+            "tu zona de confort es cómoda. la mediocridad también{punct}",
+            "no necesitas más tiempo. necesitas menos excusas{punct}",
+            "podrías haber terminado esto ya. en cambio, aquí estamos{punct}",
+            (
+                "tal vez si empezaras, "
+                "no seguirías pensando en empezar{punct}"
+            )
+        ],
+        "medium": [
+            "mirarte, sin hacer nada otra vez. icónico{punct}",
+            (
+                "si estás cansado de reiniciar, "
+                "intenta no rendirte por una vez{punct}"
+            ),
+            (
+                "estoy seguro de que pensar en "
+                "hacer las cosas va a ayudar mucho{punct}"
+            ),
+            "esto no se hace más fácil mientras esperas{punct}",
+            "esperar motivación ya es un pasatiempo a estas alturas{punct}",
+            "el tú del futuro aquí. Por favor, empieza ahora{punct}",
+            "aún no has fallado. Pero te estás acercando peligrosamente{punct}"
+        ],
+        "hard": [
+            "tu zona de confort llamó. Dice que nunca la has dejado{punct}",
+            "tus metas te extrañan. Hace tiempo que no te ven{punct}",
+            "con tu ética de trabajo, tu potencial es solo un rumor{punct}",
+            "si sigues así, le darás la razón a tus detractores{punct}",
+            (
+                "no necesitas apurarte. "
+                "No es como si tu vida fuera finita o algo así{punct}"
+            ),
+            "si el esfuerzo fuera dinero, estarías en bancarrota{punct}",
+            "tu yo del futuro te está observando. Está decepcionado{punct}"
         ]
     }
 }
