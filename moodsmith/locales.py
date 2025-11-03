@@ -65,7 +65,7 @@ MOTIVATIONAL_TEMPLATES = {
             "If it hurts, automate it. If it breaks, test it.",
             "Discipline beats inspiration: show up and push a commit.",
             "It's not a bug; it's an undocumented feature. - Grace Hopper",
-            "Talk is cheap. Show me the code. ― Linus Torvalds"
+            "Talk is cheap. Show me the code. ― Linus Torvalds",
         ],
     }
 }

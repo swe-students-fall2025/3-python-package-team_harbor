@@ -1,4 +1,4 @@
-'''Exports functions we want users to import'''
+"""Exports functions we want users to import"""
 
 from .core import motivational, negative, positive_quote, funny
 

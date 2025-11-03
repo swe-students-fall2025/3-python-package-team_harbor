@@ -1,4 +1,4 @@
-'''Core driver program of moodsmith'''
+"""Core driver program of moodsmith"""
 
 import random
 from typing import Literal, Optional
@@ -10,12 +10,12 @@ Intensity = Literal["soft", "medium", "hard"]
 
 
 def _bangs(intensity: int) -> str:
-    '''
+    """
     Converts intensity 0-5 to punctuation, if 0 then "."
 
     Args:
         intensity: how many "!"s will be added or "."
-    '''
+    """
 
     intensity = max(0, min(intensity, 5))
     return "!" * intensity if intensity else "."
@@ -27,7 +27,7 @@ def positive_quote(
     enthusiasm: int = 2,
     seed: Optional[int] = None,
 ) -> str:
-    '''
+    """
     Return a short positive message.
 
     Args:
@@ -36,7 +36,7 @@ def positive_quote(
         enthusiasm: 0-5, number of exclamation points (0 -> '.').
         seed: If provided, makes the random
             choice deterministic (useful for tests).
-    '''
+    """
 
     # use seed as the same number as running as in test to remove randomness
     # and you will always get the same output for e.g seed 123
@@ -47,13 +47,14 @@ def positive_quote(
     prefix = f"{name}, " if name else ""
     return prefix + base
 
+
 def funny(
     language: str = "en",
     name: Optional[str] = None,
     enthusiasm: int = 2,
     seed: Optional[int] = None,
 ) -> str:
-    '''
+    """
     Return a short positive message.
 
     Args:
@@ -62,10 +63,10 @@ def funny(
         enthusiasm: 0-5, number of exclamation points (0 -> '.').
         seed: If provided, makes the random
             choice deterministic (useful for tests).
-    '''
+    """
 
-    '''raises exception if enthusiasm is out of scope'''
-    if (enthusiasm<0 or enthusiasm>5 ):
+    """raises exception if enthusiasm is out of scope"""
+    if enthusiasm < 0 or enthusiasm > 5:
         raise ValueError("enthusiasm out of range 0-5")
 
     # use seed as the same number as running as in test to remove randomness
@@ -76,6 +77,7 @@ def funny(
     base = rnd.choice(templates).format(punct=punct)
     prefix = f"{name}, " if name else ""
     return prefix + base
+
 
 def motivational(
     language: str = "en",
