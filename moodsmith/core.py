@@ -1,21 +1,20 @@
-'''Core driver program of moodsmith'''
+"""Core driver program of moodsmith"""
 
 import random
 from typing import Literal, Optional
-
-from .locales import (MOTIVATIONAL_TEMPLATES, NEGATIVE_MOTIVATIONAL,
+from .locales import (MOTIVATIONAL_TEMPLATES,FUNNY_TEMPLATE, NEGATIVE_MOTIVATIONAL,
                       POSITIVE_TEMPLATES)
 
 Intensity = Literal["soft", "medium", "hard"]
 
 
 def _bangs(intensity: int) -> str:
-    '''
+    """
     Converts intensity 0-5 to punctuation, if 0 then "."
 
     Args:
         intensity: how many "!"s will be added or "."
-    '''
+    """
 
     intensity = max(0, min(intensity, 5))
     return "!" * intensity if intensity else "."
@@ -27,7 +26,7 @@ def positive_quote(
     enthusiasm: int = 2,
     seed: Optional[int] = None,
 ) -> str:
-    '''
+    """
     Return a short positive message.
 
     Args:
@@ -36,12 +35,39 @@ def positive_quote(
         enthusiasm: 0-5, number of exclamation points (0 -> '.').
         seed: If provided, makes the random
             choice deterministic (useful for tests).
-    '''
+    """
 
     # use seed as the same number as running as in test to remove randomness
     # and you will always get the same output for e.g seed 123
     rnd = random.Random(seed)
     templates = POSITIVE_TEMPLATES.get(language, POSITIVE_TEMPLATES["en"])
+    punct = _bangs(enthusiasm)
+    base = rnd.choice(templates).format(punct=punct)
+    prefix = f"{name}, " if name else ""
+    return prefix + base
+
+
+def funny(
+    language: str = "en",
+    name: Optional[str] = None,
+    enthusiasm: int = 2,
+    seed: Optional[int] = None,
+) -> str:
+    """
+    Return a short positive message.
+
+    Args:
+        language: e.g en, es, fr : defaults to english if empty
+        name: Optional person to address.
+        enthusiasm: 0-5, number of exclamation points (0 -> '.').
+        seed: If provided, makes the random
+            choice deterministic (useful for tests).
+    """
+
+    # use seed as the same number as running as in test to remove randomness
+    # and you will always get the same output for e.g seed 123
+    rnd = random.Random(seed)
+    templates = FUNNY_TEMPLATE.get(language, FUNNY_TEMPLATE["en"])
     punct = _bangs(enthusiasm)
     base = rnd.choice(templates).format(punct=punct)
     prefix = f"{name}, " if name else ""

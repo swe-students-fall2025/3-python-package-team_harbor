@@ -1,6 +1,7 @@
 """Tests for the positive_quote() function."""
 
 import re
+
 from moodsmith import positive_quote
 
 

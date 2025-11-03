@@ -1,4 +1,4 @@
-'''Tests for motivational messages'''
+"""Tests for the motivational() function."""
 
 from moodsmith import motivational
 
