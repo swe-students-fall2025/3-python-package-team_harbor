@@ -97,4 +97,7 @@ def negative(
     pool = lang_table.get(intensity, lang_table.get("medium"))
     punct = _bangs(enthusiasm)
     msg = rnd.choice(pool).format(punct=punct)
-    return (name if name else "") + msg
+    if name:
+        return name + ", " + msg
+    msg = msg[0].upper() + msg[1:]
+    return msg

@@ -129,12 +129,12 @@ NEGATIVE_MOTIVATIONAL = {
             "ta zone de confort est agréable. La médiocrité aussi{punct}",
             (
                 "tu n'as pas besoin de plus de temps. "
-                "Tu as besoin de moins d'excuses{punct}",
+                "Tu as besoin de moins d'excuses{punct}"
             ),
             (
                 "tu aurais pu finir ça depuis longtemps. "
-                "À la place, nous voilà{punct}",
-            )
+                "À la place, nous voilà{punct}"
+            ),
             (
                 "peut-être que si tu avais commencé, "
                 "tu ne serais pas encore en train d'y penser{punct}"
