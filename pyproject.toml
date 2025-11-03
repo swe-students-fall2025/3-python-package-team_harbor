@@ -14,7 +14,7 @@ authors = [
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["python", "package", "productivity", "motivation", "focus", "cli", "terminal"]
-requires-python = "==3.12.*"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Intended Audience :: Education",
@@ -30,3 +30,4 @@ dev = ["pytest", "pylint", "build", "twine"]
 "Repository" = "https://github.com/orgs/swe-students-fall2025/teams/team_harbor.git"
 
 [project.scripts]
+moodsmith = "moodsmith.cli:main"
