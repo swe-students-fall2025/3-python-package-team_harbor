@@ -64,7 +64,7 @@ def test_intensity(seed, intensity):
         res = negative(enthusiasm=0, intensity=intensity, seed=seed).lower()
     pool = [
         s.format(punct=".").lower()
-        for lang in NEGATIVE_MOTIVATIONAL
+        for lang in NEGATIVE_MOTIVATIONAL.keys()
         for s in NEGATIVE_MOTIVATIONAL[lang].get(
             intensity, NEGATIVE_MOTIVATIONAL[lang]["medium"]
         )
