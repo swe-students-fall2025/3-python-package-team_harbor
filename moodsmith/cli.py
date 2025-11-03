@@ -8,6 +8,8 @@ from .core import motivational, positive_quote
 
 
 def main():
+    '''Main driver function for CLI'''
+
     parser = argparse.ArgumentParser(
         prog="moodsmith",
         description=(
