@@ -2,7 +2,6 @@
 
 import random
 from typing import Literal, Optional
- 
 from .locales import (MOTIVATIONAL_TEMPLATES,FUNNY_TEMPLATE, NEGATIVE_MOTIVATIONAL,
                       POSITIVE_TEMPLATES)
 
