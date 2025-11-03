@@ -64,9 +64,6 @@ def funny(
             choice deterministic (useful for tests).
     """
 
-    if enthusiasm < 0 or enthusiasm > 5:
-        raise ValueError("enthusiasm out of range 0-5")
-
     # use seed as the same number as running as in test to remove randomness
     # and you will always get the same output for e.g seed 123
     rnd = random.Random(seed)
