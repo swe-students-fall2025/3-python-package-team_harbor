@@ -10,6 +10,9 @@ version = "0.0.1"
 authors = [
   { name="Samuel Yang", email="sy3638@nyu.edu" },
   { name="Conor Tiernan", email="ct3551@nyu.edu" },
+  { name="Ganling Zhou", email="gz2184@nyu.edu" },
+  { name="Harrison Coon", email="hoc2006@nyu.edu" },
+  { name="Eason Huang", email="mh6455@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
