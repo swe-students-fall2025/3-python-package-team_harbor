@@ -15,4 +15,3 @@ def test_language_not_correct_language_still_prints_english():
 def test_name_in_output_string():
     test=funny("fr","joy",1,54)
     assert "joy" in (test)
-    

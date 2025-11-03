@@ -1,7 +1,7 @@
 '''Exports functions we want users to import'''
 
-from .core import positive
-from .core import funny
+from .core import motivational, negative, positive_quote, funny
 
-__all__ = ["positive","funny"]  # functions that get imported
+# imported functions
+__all__ = ["positive_quote", "motivational", "negative","funny"]
 __version__ = "0.0.1"  # packages current version
