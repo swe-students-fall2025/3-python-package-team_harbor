@@ -278,7 +278,7 @@ FUNNY_TEMPLATE = {
 "temps à taper vite, mais en réalité, on "
 "passe le plus clair de notre temps à fixer l'abîme{punct}"
    ],
-   "sp": [
+   "es": [
        "Las computadoras son rápidas; "
        "los desarrolladores las ralentizan{punct}",
 
