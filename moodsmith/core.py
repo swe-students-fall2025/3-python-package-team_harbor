@@ -1,9 +1,11 @@
 '''Core driver program of moodsmith'''
 
 import random
-from typing import Optional, Literal
+from typing import Literal, Optional
 
-from .locales import POSITIVE_TEMPLATES, MOTIVATIONAL_TEMPLATES
+from .locales import (MOTIVATIONAL_TEMPLATES, NEGATIVE_MOTIVATIONAL,
+                      POSITIVE_TEMPLATES)
+
 Intensity = Literal["soft", "medium", "hard"]
 
 
@@ -61,8 +63,41 @@ def motivational(
         seed: deterministic selection if provided.
     """
     rnd = random.Random(seed)
-    lang_table = MOTIVATIONAL_TEMPLATES.get(language) or MOTIVATIONAL_TEMPLATES["en"]
+    lang_table = (
+        MOTIVATIONAL_TEMPLATES.get(language) or MOTIVATIONAL_TEMPLATES["en"]
+    )
     pool = lang_table.get(intensity) or lang_table["medium"]
     msg = rnd.choice(pool)
     prefix = f"{name}, " if name else ""
     return prefix + msg
+
+
+def negative(
+    language: str = "en",
+    name: Optional[str] = None,
+    enthusiasm: int = 2,
+    intensity: Intensity = "medium",
+    seed: Optional[int] = None
+) -> str:
+    '''
+    Return a short negative message to movitate the user
+
+    Args:
+        language: Language of message
+        name: Optional name of person to address message to
+        enthusiasm: number of explanation points (max 5)
+        intensity: How mean/motivaitonal the message is
+        seed: Seed for random functions (for testing purposes)
+    '''
+
+    rnd = random.Random(seed)
+    lang_table = (
+        NEGATIVE_MOTIVATIONAL.get(language, NEGATIVE_MOTIVATIONAL["en"])
+    )
+    pool = lang_table.get(intensity, lang_table.get("medium"))
+    punct = _bangs(enthusiasm)
+    msg = rnd.choice(pool).format(punct=punct)
+    if name:
+        return name + ", " + msg
+    msg = msg[0].upper() + msg[1:]
+    return msg
