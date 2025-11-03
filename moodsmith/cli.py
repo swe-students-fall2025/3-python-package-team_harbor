@@ -1,13 +1,19 @@
+'''Command Line Interface for Moodsmith'''
+
 import argparse
-from typing import Dict, Any, Callable
-from .core import positive_quote, motivational
+from typing import Callable
+
 from . import __version__
+from .core import motivational, positive_quote
 
 
 def main():
     parser = argparse.ArgumentParser(
         prog="moodsmith",
-        description="A package designed to motivate you while you work, directly in your terminal.",
+        description=(
+            "A package designed to motivate you while you work,"
+            " directly in your terminal."
+        ),
     )
     parser.add_argument(
         "-v", "--version",
