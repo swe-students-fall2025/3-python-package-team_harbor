@@ -65,7 +65,6 @@ def funny(
             choice deterministic (useful for tests).
     """
 
-  
     if enthusiasm < 0 or enthusiasm > 5:
         raise ValueError("enthusiasm out of range 0-5")
 
