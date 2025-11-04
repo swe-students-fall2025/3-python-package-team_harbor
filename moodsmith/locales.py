@@ -63,7 +63,7 @@ MOTIVATIONAL_TEMPLATES = {
         ],
     },
 
-    "es": {  # Spanish
+    "es": {
         "soft": [
             "Progreso, no perfección: entrega la próxima mejora pequeña.",
             "Cada vez que el código corre, aprendes, incluso cuando falla.",
@@ -87,7 +87,7 @@ MOTIVATIONAL_TEMPLATES = {
         ],
     },
 
-    "fr": {  # French
+    "fr": {
         "soft": [
             "Le progrès avant la perfection — livre la prochaine petite amélioration.",
             "Tu apprends à chaque exécution du code, même quand ça échoue.",
