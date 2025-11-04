@@ -1,15 +1,17 @@
-name: Unit_tests
+name: CI / CD
 
 on: 
   pull_request:
     branches: [ main ]
+  push:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.12"]
+        python-version: ["3.12", "3.13"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
