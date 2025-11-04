@@ -4,7 +4,7 @@ import argparse
 from typing import Callable
 
 from . import __version__
-from .core import motivational, positive_quote
+from .core import motivational, positive
 
 
 def main():
@@ -51,7 +51,7 @@ def main():
         "-n", "--name",
         help="Person to address.",
     )
-    pos_parser.set_defaults(func=positive_quote)
+    pos_parser.set_defaults(func=positive)
     mot_parser = subparsers.add_parser(
         "motivational",
         help="Get a short motivational message.",

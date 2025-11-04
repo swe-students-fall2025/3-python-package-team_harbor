@@ -20,7 +20,7 @@ def _bangs(intensity: int) -> str:
     return "!" * intensity if intensity else "."
 
 
-def positive_quote(
+def positive(
     language: str = "en",
     name: Optional[str] = None,
     enthusiasm: int = 2,
