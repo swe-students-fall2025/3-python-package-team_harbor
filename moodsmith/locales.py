@@ -299,6 +299,7 @@ NEGATIVE_MOTIVATIONAL = {
 FUNNY_TEMPLATE = {
     "en": [
         " Computers are fast; developers keep them slow{punct}",
+
         "If debugging is the process of removing bugs,"
         " then programming must be the process of putting them in{punct}",
 
