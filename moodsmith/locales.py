@@ -54,7 +54,7 @@ MOTIVATIONAL_TEMPLATES = {
             ),
             (
                 "If, at first, you do not succeed, call it version 1.0."
-                " ― Khayri R.R. Woulfe",
+                " ― Khayri R.R. Woulfe"
             ),
             "Confusion is part of programming. ― Felienne Hermans"
         ],
@@ -80,7 +80,7 @@ MOTIVATIONAL_TEMPLATES = {
         "medium": [
             (
                 "La maestría se construye con repeticiones: "
-                "escribir, probar, repetir.",
+                "escribir, probar, repetir."
             ),
             "La retroalimentación es combustible; las pruebas son el motor.",
             "Si puedes explicarlo, puedes construirlo.",
@@ -113,7 +113,7 @@ MOTIVATIONAL_TEMPLATES = {
         "medium": [
             (
                 "La maîtrise se construit par la répétition: "
-                "écrire, tester, recommencer.",
+                "écrire, tester, recommencer."
             ),
             "Le feedback est le carburant ; les tests sont le moteur.",
             "Si tu peux l'expliquer, tu peux le construire.",
