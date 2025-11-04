@@ -1,95 +1,133 @@
-'''Command Line Interface for Moodsmith'''
-
 import argparse
-from typing import Callable
-
 from . import __version__
-from .core import motivational, positive_quote
+from .core import positive_quote, funny, motivational, negative
+from .locales import (
+    POSITIVE_TEMPLATES,
+    FUNNY_TEMPLATE,
+    MOTIVATIONAL_TEMPLATES,
+    NEGATIVE_MOTIVATIONAL,
+)
+
+
+def create_parser():
+    lang_keys = set(POSITIVE_TEMPLATES.keys())
+    lang_keys.update(FUNNY_TEMPLATE.keys())
+    lang_keys.update(MOTIVATIONAL_TEMPLATES.keys())
+    lang_keys.update(NEGATIVE_MOTIVATIONAL.keys())
+    languages = sorted(list(lang_keys))
+    categories = ["positive", "funny", "motivational", "negative"]
+    intensities = ["soft", "medium", "hard"]
+
+    parser = argparse.ArgumentParser(
+        description="""Motivational sentences for programmers.""",
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+
+    parser.add_argument(
+        "-c",
+        "--category",
+        choices=categories,
+        default="motivational",
+        help="""Category of the message.
+  positive: A positive quote.
+  funny: A funny sentence.
+  motivational: An earnest motivational message.
+  negative: A negatively-toned motivational message.
+  (default: motivational)""",
+    )
+
+    parser.add_argument(
+        "-l",
+        "--language",
+        choices=languages,
+        default="en",
+        help=f"""Message language.
+  Available: {', '.join(languages)}
+  Falls back to 'en' if a language is unsupported
+  for a given category.
+  (default: en)""",
+    )
+
+    parser.add_argument(
+        "-i",
+        "--intensity",
+        choices=intensities,
+        default="medium",
+        help=f"""Tone intensity.
+  Available: {', '.join(intensities)}
+  Applies to 'motivational' and 'negative' categories.
+  (default: medium)""",
+    )
+
+    parser.add_argument(
+        "-e",
+        "--enthusiasm",
+        type=int,
+        choices=range(0, 6),
+        default=1,
+        metavar="{0-5}",
+        help="""Controls punctuation (enthusiasm).
+  0: ends with a period (.)
+  1-5: ends with that many exclamation points (!)
+  Applies to 'positive', 'funny', and 'negative' categories.
+  (default: 1)""",
+    )
+
+    parser.add_argument(
+        "-n", "--name", type=str, help="Name to address in the message."
+    )
+
+    parser.add_argument(
+        "--seed", type=int, help="Seed for deterministic (test) output."
+    )
+    parser.add_argument(
+        "-v", "--version", action="version", version=f"moodsmith {__version__}"
+    )
+
+    return parser
 
 
 def main():
-    '''Main driver function for CLI'''
-
-    parser = argparse.ArgumentParser(
-        prog="moodsmith",
-        description=(
-            "A package designed to motivate you while you work,"
-            " directly in your terminal."
-        ),
-    )
-    parser.add_argument(
-        "-v", "--version",
-        action="version",
-        version=f"%(prog)s {__version__}",
-    )
-    parser.add_argument(
-        "-l", "--language",
-        choices=["en", "es", "fr"],  # Based on locales.py
-        default="en",
-        help="Language of the message (default: en).",
-    )
-    subparsers = parser.add_subparsers(
-        dest="category",
-        required=True,
-        title="Categories",
-        help="The type of message to generate.",
-    )
-    pos_parser = subparsers.add_parser(
-        "positive",
-        help="Get a positive, uplifting quote.",
-        description="Get a positive, uplifting quote.",
-    )
-    pos_parser.add_argument(
-        "-e", "--enthusiasm",
-        type=int,
-        choices=range(0, 6),
-        default=2,
-        metavar="[0-5]",
-        help="Set enthusiasm level, 0=period, 5=!!!!! (default: 2).",
-    )
-    pos_parser.add_argument(
-        "-n", "--name",
-        help="Person to address.",
-    )
-    pos_parser.set_defaults(func=positive_quote)
-    mot_parser = subparsers.add_parser(
-        "motivational",
-        help="Get a short motivational message.",
-        description="Get a short motivational message.",
-    )
-    mot_parser.add_argument(
-        "-i", "--intensity",
-        choices=["soft", "medium", "hard"],
-        default="medium",
-        help="Intensity/tone of the message (default: medium).",
-    )
-    mot_parser.add_argument(
-        "-n", "--name",
-        help="Person to address.",
-    )
-    mot_parser.set_defaults(func=motivational)
-    subparsers.add_parser(
-        "funny",
-        help="Get a funny joke (not yet implemented).",
-    )
-    subparsers.add_parser(
-        "negative",
-        help="Get a negative-motivational quote (not yet implemented).",
-    )
+    parser = create_parser()
     args = parser.parse_args()
-    if hasattr(args, "func"):
-        kwargs = vars(args)
-        func_to_call: Callable = kwargs.pop("func")
-        kwargs.pop("category", None)
-        try:
-            message = func_to_call(**kwargs)
-            print(message)
-        except TypeError as e:
-            print(f"Error calling function: {e}")
-            print("This category may not be fully implemented yet.")
 
-    else:
-        print(f"The '{args.category}' category is not yet implemented.")
+    message = ""
+    try:
+        if args.category == "positive":
+            message = positive_quote(
+                language=args.language,
+                name=args.name,
+                enthusiasm=args.enthusiasm,
+                seed=args.seed,
+            )
+        elif args.category == "funny":
+            message = funny(
+                language=args.language,
+                name=args.name,
+                enthusiasm=args.enthusiasm,
+                seed=args.seed,
+            )
+        elif args.category == "motivational":
+            message = motivational(
+                language=args.language,
+                intensity=args.intensity,
+                name=args.name,
+                seed=args.seed,
+            )
+        elif args.category == "negative":
+            message = negative(
+                language=args.language,
+                name=args.name,
+                enthusiasm=args.enthusiasm,
+                intensity=args.intensity,
+                seed=args.seed,
+            )
+
+        print(message)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        parser.print_help()
 
 
 if __name__ == "__main__":
