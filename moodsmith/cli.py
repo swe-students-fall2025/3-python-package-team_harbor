@@ -51,7 +51,7 @@ def main():
         "-n", "--name",
         help="Person to address.",
     )
-    pos_parser.set_defaults(func=positive_quote)
+    pos_parser.set_defaults(func=positive)
     mot_parser = subparsers.add_parser(
         "motivational",
         help="Get a short motivational message.",
