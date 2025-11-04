@@ -48,14 +48,8 @@ MOTIVATIONAL_TEMPLATES = {
             "If you can explain it, you can build it.",
             "Read the errors like clues, not verdicts.",
             "When in doubt, make it smaller and make it pass.",
-            (
-                "Experience is the name everyone gives to their mistakes."
-                " - Oscar Wilde"
-            ),
-            (
-                "If, at first, you do not succeed, "
-                "call it version 1.0. ― Khayri R.R. Woulfe"
-            ),
+            "Experience is the name everyone gives to their mistakes. - Oscar Wilde",
+            "If, at first, you do not succeed, call it version 1.0. ― Khayri R.R. Woulfe",
             "Confusion is part of programming. ― Felienne Hermans"
         ],
         "hard": [
@@ -65,9 +59,57 @@ MOTIVATIONAL_TEMPLATES = {
             "If it hurts, automate it. If it breaks, test it.",
             "Discipline beats inspiration: show up and push a commit.",
             "It's not a bug; it's an undocumented feature. - Grace Hopper",
-            "Talk is cheap. Show me the code. ― Linus Torvalds",
+            "Talk is cheap. Show me the code. ― Linus Torvalds"
         ],
-    }
+    },
+
+    "es": {
+        "soft": [
+            "Progreso, no perfección: entrega la próxima mejora pequeña.",
+            "Cada vez que el código corre, aprendes, incluso cuando falla.",
+            "Pequeños commits hoy se vuelven gran impulso mañana.",
+            "Sé paciente contigo—depurar requiere calma.",
+            "Cada refactor limpio es un regalo para tu yo del futuro.",
+        ],
+        "medium": [
+            "La maestría se construye con repeticiones: escribir, probar, repetir.",
+            "La retroalimentación es combustible; las pruebas son el motor.",
+            "Si puedes explicarlo, puedes construirlo.",
+            "Lee los errores como pistas, no como veredictos.",
+            "Cuando dudes, hazlo más pequeño y haz que pase.",
+        ],
+        "hard": [
+            "El coraje es un test en verde después de un rojo brutal.",
+            "No necesitas perfección—entrega, aprende, itera.",
+            "Haz el diff. Revisa. Mejora. Repite.",
+            "Si duele, automatízalo. Si se rompe, pruébalo.",
+            "La disciplina supera a la inspiración: preséntate y haz un commit.",
+        ],
+    },
+
+    "fr": {
+        "soft": [
+            "Le progrès avant la perfection — livre la prochaine petite amélioration.",
+            "Tu apprends à chaque exécution du code, même quand ça échoue.",
+            "De petits commits aujourd'hui deviennent un grand élan demain.",
+            "Sois patient avec toi-même — le débogage demande du temps.",
+            "Chaque refactorisation propre est un cadeau pour ton futur toi.",
+        ],
+        "medium": [
+            "La maîtrise se construit par la répétition : écrire, tester, recommencer.",
+            "Le feedback est le carburant ; les tests sont le moteur.",
+            "Si tu peux l'expliquer, tu peux le construire.",
+            "Lis les erreurs comme des indices, pas des verdicts.",
+            "En cas de doute, fais plus petit et fais passer le test.",
+        ],
+        "hard": [
+            "Le courage, c'est le test qui passe au vert après un rouge brutal.",
+            "Pas besoin d'être parfait — livre, apprends, itère.",
+            "Fais le diff. Relis. Améliore. Répète.",
+            "Si ça fait mal, automatise-le. Si ça casse, teste-le.",
+            "La discipline bat l'inspiration : sois présent et fais un commit.",
+        ],
+    },
 }
 
 NEGATIVE_MOTIVATIONAL = {
