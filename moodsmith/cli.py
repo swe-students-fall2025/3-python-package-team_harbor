@@ -4,7 +4,7 @@ import argparse
 from typing import Callable
 
 from . import __version__
-from .core import motivational, positive_quote
+from .core import motivational, positive
 
 
 def main():
