@@ -1,19 +1,51 @@
-"""Examples of how moodsmith is used"""
+"""Examples of how Moodsmith is used"""
 
-# from moodsmith import positive_quote, motivational,funny
+import moodsmith
 
+# Defaults to 2 exclamation marks and English language
+print(f"""
+===========================FUNNY MESSAGE===========================
+Funny message:
+    {moodsmith.funny()}
+Funny message in French with a period:
+    {moodsmith.funny(language="fr", enthusiasm=0)}
+Funny message in Spanish with my name in it and 4 exclamation marks:
+    {moodsmith.funny(language="es", enthusiasm=4, name="Eric")}
+==================================================================
+""")
 
-# print("-- funny demo --")
-# print(funny(language="en", name="bob", enthusiasm=3))
-# print(funny(language="en", seed=123))
-# Consistent seed will ensure identical outputs between runs
+# Defaults to medium intensity and English language
+print(f"""
+=======================MOTIVATIONAL MESSAGE=======================
+Motivational message:
+    {moodsmith.motivational()}
+Very motivational message in French:
+    {moodsmith.motivational(language="fr", intensity="hard")}
+Slightly motivational message in Spanish with my name in it:
+    {moodsmith.motivational(language="es", intensity="soft", name="Eric")}
+==================================================================
+""")
 
-# print("-- Positive demo --")
-# print(positive_quote(language="en", name="bob", enthusiasm=3))
-# print(positive_quote(language="en", seed=123))
-# print(positive_quote(language="es", name="bob", enthusiasm=2))
-# print(positive_quote(language="fr", seed=123, enthusiasm=0))
-# Consistent seed will ensure identical outputs between runs
+# Defaults to 2 exclamation marks, medium intensity, and English language
+print(f"""
+=========================NEGATIVE MESSAGE=========================
+Negative message:
+    {moodsmith.negative()}
+Very negative message in French with my name in it:
+    {moodsmith.negative(language="fr", name="Eric", intensity="hard")}
+Slightly negative message in Spanish with 5 exclamation marks:
+    {moodsmith.negative(language="es", intensity="soft", enthusiasm=5)}
+==================================================================
+""")
 
-# print("\n== motivational (soft) ==")
-# print(motivational(language="en", intensity="soft", seed=2))
+# Defaults to 2 exclamation marks and English language
+print(f"""
+=========================POSITIVE MESSAGE=========================
+Positive message:
+    {moodsmith.positive()}
+Positive message in French with my name in it and a period:
+    {moodsmith.positive(language="fr", name="Eric", enthusiasm=0)}
+Positive message in Spanish with 5 exclamation marks:
+    {moodsmith.positive(language="es", enthusiasm=5)}
+==================================================================
+""")
