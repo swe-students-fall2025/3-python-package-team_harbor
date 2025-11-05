@@ -1,6 +1,12 @@
 import argparse
 from . import __version__
-from .core import motivational, positive
+from .core import positive, funny, motivational, negative
+from .locales import (
+    POSITIVE_TEMPLATES,
+    FUNNY_TEMPLATE,
+    MOTIVATIONAL_TEMPLATES,
+    NEGATIVE_MOTIVATIONAL,
+)
 
 
 def create_parser():
@@ -66,25 +72,9 @@ def create_parser():
   Applies to 'positive', 'funny', and 'negative' categories.
   (default: 1)""",
     )
-    pos_parser.add_argument(
-        "-n", "--name",
-        help="Person to address.",
-    )
-    pos_parser.set_defaults(func=positive)
-    mot_parser = subparsers.add_parser(
-        "motivational",
-        help="Get a short motivational message.",
-        description="Get a short motivational message.",
-    )
-    mot_parser.add_argument(
-        "-i", "--intensity",
-        choices=["soft", "medium", "hard"],
-        default="medium",
-        help="Intensity/tone of the message (default: medium).",
-    )
-    mot_parser.add_argument(
-        "-n", "--name",
-        help="Person to address.",
+
+    parser.add_argument(
+        "-n", "--name", type=str, help="Name to address in the message."
     )
 
     parser.add_argument(
@@ -104,7 +94,7 @@ def main():
     message = ""
     try:
         if args.category == "positive":
-            message = positive_quote(
+            message = positive(
                 language=args.language,
                 name=args.name,
                 enthusiasm=args.enthusiasm,
