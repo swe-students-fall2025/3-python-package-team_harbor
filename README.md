@@ -1,6 +1,105 @@
 [![Pylint](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/pylint.yml/badge.svg)](https://github.com/swe-students-fall2025/3-python-packagepackage-team_harbor/actions/workflows/pylint.yml)
-[![Unit_tests](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/tests.yml/badge.svg)](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/tests.yml)
+[![CI / CD](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/tests.yml/badge.svg)](https://github.com/swe-students-fall2025/3-python-package-team_harbor/actions/workflows/tests.yml)
 
-# Python Package Exercise
+# Moodsmith
 
-An exercise to create a Python package, build it, test it, distribute it, and use it. See [instructions](./instructions.md) for details.
+## Setting Up a Virtual Environment and Installing Moodsmith
+
+### 1. Install pipenv
+
+If you don’t already have `pipenv` installed, run:
+
+```bash
+pip install pipenv
+```
+### 2. Activate the virtual environment
+```bash
+pipenv shell
+```
+
+### 3. Install Moodsmith
+```bash
+pipenv install moodsmith
+```
+To verify the installation, run
+```bash
+moodsmith --version
+```
+
+## Moodsmith in the command line
+
+For a list of all commands and available flags, type
+```bash
+moodsmith --help
+```
+### Example Usage
+---
+### Funny message
+- For a funny message:
+```bash
+moodsmith funny
+```
+Available flags:
+- --name (-n) : Name
+- --enthusiasm (-e) : Enthusiasm (number of exclamation points after the message)
+- --language (-l) : Language (en/fr/es)
+### Negative motivational message
+- For a sarcastic message:
+```bash
+moodsmith negative 
+```
+Available flags:
+- --name (-n) : Name
+- --enthusiasm (-e) : Enthusiasm (number of exclamation points after the message)
+- --intensity (-i) : Intensity (soft/medum/hard) (How sarcastic should the message be)
+- --language (-l) : Language (en/fr/es)
+### Motivational message
+- For a motivational message:
+```bash
+moodsmith motivational
+```
+Available flags:
+- --name (-n) : Name
+- --intensity (-i) : Intensity (soft, medium, hard) (How motivational should the message be)
+- --language (-l) : Language (en/fr/es)
+### Positive message:
+- For a positive message:
+```bash
+moodsmith positive
+```
+Available flags:
+- --name (-n) : Name
+- --enthusiasm (-e) : Enthusiasm (number of exclamation points after the message)
+- --language (-l) : Language (en/fr/es)
+---
+### Within a python program 
+- Import moodsmith using:
+```python
+import moodsmith
+```
+- Alternatively, import specifically the needed functions from moodsmith. The below code imports all available functions. 
+```python
+from moodsmith import positive, negative, motivational, funny
+```
+### Usage of moodsmith functions:
+- Funny:
+```python
+funny(name="name", enthusiasm=2, language="en")
+```
+- Negative motivational:
+```python
+negative(name="name", enthusiasm=0, intensity="hard", language="fr")
+```
+- Motivational:
+```python
+motivational(name="name", intensity="soft", language="es")
+```
+- Positive:
+```python
+positive(name="name", enthusiasm=5, language="en")
+```
+For an example python project using moodsmith, click here: [example moodsmith program](examples/demo.py)
+
+# Contributors
+- Samuel Yang (https://github.com/SamuelYang24)
+- Conor Tiernan (https://github.com/ct-04)
