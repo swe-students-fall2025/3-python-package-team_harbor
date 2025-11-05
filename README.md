@@ -3,6 +3,8 @@
 
 # Moodsmith
 
+Pypi link: https://pypi.org/project/moodsmith
+
 ## Setting Up a Virtual Environment and Installing Moodsmith
 
 ### 1. Install pipenv
@@ -103,3 +105,6 @@ For an example python project using moodsmith, click here: [example moodsmith pr
 # Contributors
 - Samuel Yang (https://github.com/SamuelYang24)
 - Conor Tiernan (https://github.com/ct-04)
+- Ganling Zhou (https://github.com/GanlingZ)
+- Eason Huang (https://github.com/GILGAMESH605)
+- Harrison Coon (https://github.com/hoc2006-code)

@@ -1,15 +1,16 @@
+"""Cli interface for Moodsmith"""
+
 import argparse
+
 from . import __version__
-from .core import positive, funny, motivational, negative
-from .locales import (
-    POSITIVE_TEMPLATES,
-    FUNNY_TEMPLATE,
-    MOTIVATIONAL_TEMPLATES,
-    NEGATIVE_MOTIVATIONAL,
-)
+from .core import funny, motivational, negative, positive
+from .locales import (FUNNY_TEMPLATE, MOTIVATIONAL_TEMPLATES,
+                      NEGATIVE_MOTIVATIONAL, POSITIVE_TEMPLATES)
 
 
 def create_parser():
+    """Parse command-line arguments"""
+
     lang_keys = set(POSITIVE_TEMPLATES.keys())
     lang_keys.update(FUNNY_TEMPLATE.keys())
     lang_keys.update(MOTIVATIONAL_TEMPLATES.keys())
@@ -88,6 +89,8 @@ def create_parser():
 
 
 def main():
+    """Main driver function called through CLI"""
+
     parser = create_parser()
     args = parser.parse_args()
 
