@@ -1,6 +1,6 @@
 import argparse
 from . import __version__
-from .core import positive_quote, funny, motivational, negative
+from .core import positive, funny, motivational, negative
 from .locales import (
     POSITIVE_TEMPLATES,
     FUNNY_TEMPLATE,
@@ -94,7 +94,7 @@ def main():
     message = ""
     try:
         if args.category == "positive":
-            message = positive_quote(
+            message = positive(
                 language=args.language,
                 name=args.name,
                 enthusiasm=args.enthusiasm,
