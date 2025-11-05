@@ -103,7 +103,7 @@ positive(name="name", enthusiasm=5, language="en", seed=22)
 
 Note that all arguments have defaults and none are required.
 
-For an example python project using moodsmith, click here: [example moodsmith program](examples/demo.py)
+For an example python project using moodsmith, click here: [example moodsmith program](https://github.com/swe-students-fall2025/3-python-package-team_harbor/blob/main/examples/demo.py)
 
 # Contributors
 - Samuel Yang (https://github.com/SamuelYang24)
