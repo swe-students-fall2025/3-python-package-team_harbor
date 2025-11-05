@@ -39,7 +39,7 @@ moodsmith --help
 ### Funny message
 - For a funny message:
 ```bash
-moodsmith funny
+moodsmith -c funny
 ```
 Available flags:
 - --name (-n) : Name
@@ -48,7 +48,7 @@ Available flags:
 ### Negative motivational message
 - For a sarcastic message:
 ```bash
-moodsmith negative 
+moodsmith -c negative 
 ```
 Available flags:
 - --name (-n) : Name
@@ -58,7 +58,7 @@ Available flags:
 ### Motivational message
 - For a motivational message:
 ```bash
-moodsmith motivational
+moodsmith -c motivational
 ```
 Available flags:
 - --name (-n) : Name
@@ -67,7 +67,7 @@ Available flags:
 ### Positive message:
 - For a positive message:
 ```bash
-moodsmith positive
+moodsmith -c positive
 ```
 Available flags:
 - --name (-n) : Name
@@ -86,20 +86,23 @@ from moodsmith import positive, negative, motivational, funny
 ### Usage of moodsmith functions:
 - Funny:
 ```python
-funny(name="name", enthusiasm=2, language="en")
+funny(name="name", enthusiasm=2, language="en", seed=22)
 ```
 - Negative motivational:
 ```python
-negative(name="name", enthusiasm=0, intensity="hard", language="fr")
+negative(name="name", enthusiasm=0, intensity="hard", language="fr", seed=22)
 ```
 - Motivational:
 ```python
-motivational(name="name", intensity="soft", language="es")
+motivational(name="name", intensity="soft", language="es", seed=22)
 ```
 - Positive:
 ```python
-positive(name="name", enthusiasm=5, language="en")
+positive(name="name", enthusiasm=5, language="en", seed=22)
 ```
+
+Note that all arguments have defaults and none are required.
+
 For an example python project using moodsmith, click here: [example moodsmith program](examples/demo.py)
 
 # Contributors

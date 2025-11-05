@@ -49,3 +49,10 @@ Positive message in Spanish with 5 exclamation marks:
     {moodsmith.positive(language="es", enthusiasm=5)}
 ==================================================================
 """)
+
+print("""
+NOTE: Seed argument can be passed to any function. For example:
+    moodsmith.positive(seed=22)
+    moodsmith.negative(name="Eric", seed=-12)
+    moodsmith.motivational(intensity="hard", seed=343)
+""")
