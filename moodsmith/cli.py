@@ -65,22 +65,19 @@ def create_parser():
         "--enthusiasm",
         type=int,
         choices=range(0, 6),
-        default=1,
+        default=2,
         metavar="{0-5}",
         help="""Controls punctuation (enthusiasm).
   0: ends with a period (.)
   1-5: ends with that many exclamation points (!)
   Applies to 'positive', 'funny', and 'negative' categories.
-  (default: 1)""",
+  (default: 2)""",
     )
 
     parser.add_argument(
         "-n", "--name", type=str, help="Name to address in the message."
     )
 
-    parser.add_argument(
-        "--seed", type=int, help="Seed for deterministic (test) output."
-    )
     parser.add_argument(
         "-v", "--version", action="version", version=f"moodsmith {__version__}"
     )
@@ -93,37 +90,32 @@ def main():
 
     parser = create_parser()
     args = parser.parse_args()
-
     message = ""
     try:
         if args.category == "positive":
             message = positive(
                 language=args.language,
                 name=args.name,
-                enthusiasm=args.enthusiasm,
-                seed=args.seed,
+                enthusiasm=args.enthusiasm
             )
         elif args.category == "funny":
             message = funny(
                 language=args.language,
                 name=args.name,
-                enthusiasm=args.enthusiasm,
-                seed=args.seed,
+                enthusiasm=args.enthusiasm
             )
         elif args.category == "motivational":
             message = motivational(
                 language=args.language,
                 intensity=args.intensity,
-                name=args.name,
-                seed=args.seed,
+                name=args.name
             )
         elif args.category == "negative":
             message = negative(
                 language=args.language,
                 name=args.name,
                 enthusiasm=args.enthusiasm,
-                intensity=args.intensity,
-                seed=args.seed,
+                intensity=args.intensity
             )
 
         print(message)
